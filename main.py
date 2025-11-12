@@ -18,5 +18,19 @@ def main ():
         print ("Perdona, vuelve a introducir tu respuesta")
         
 
-    jugador = Tablero()
-    maquina = Tablero()
+    jugador = Tablero(1)
+    maquina = Tablero(2)
+
+    jugador.colocar_barcos()
+    maquina.colocar_barcos()
+
+    turno_jugador = True
+
+    while True:
+        if turno_jugador:
+            print("\nTu tablero:")
+            jugador.mostrar_tablero_propio()
+            print("\nTablero enemigo:")
+            maquina.mostrar_tablero_enemigo()
+
+            x, y = pedir_coordenadas_usuario()
