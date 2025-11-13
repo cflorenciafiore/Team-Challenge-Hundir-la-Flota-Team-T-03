@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 from variables import *
 from tablero import Tablero 
 from funciones import *
@@ -77,3 +78,5 @@ def main():
             x, y = pedir_coordenadas_usuario()
 
             # Parte 8:
+=======
+>>>>>>> Stashed changes
