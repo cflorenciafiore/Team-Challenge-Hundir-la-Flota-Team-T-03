@@ -2,7 +2,7 @@ import numpy as np
 import random
 
 class Tablero:
-    """Clase que gestiona la lógica del tablero de Hundir la Flota"""
+    # Clase que gestiona la lógica del tablero de Hundir la Flota
     
     def __init__(self, filas=10, cols=10):
         self.filas = filas
