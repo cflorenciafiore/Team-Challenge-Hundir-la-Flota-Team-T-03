@@ -1,7 +1,7 @@
 #Importaciones necesarias
 from variables import flota, agua, barco, disparo_perdido, disparo_acertado, filas_tablero, cols_tablero
 from tablero import Tablero 
-from funciones import pedir_coordendas_usuario, pedir_coordenadas_maquina, recibir_disparos, procesar_disparo, juego_terminado
+from funciones import * 
 
 def juego (): #Mensaje de bienvenida e instrucciones del juego
     
