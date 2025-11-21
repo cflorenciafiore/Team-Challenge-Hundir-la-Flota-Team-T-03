@@ -37,7 +37,7 @@ def juego (): #Mensaje de bienvenida e instrucciones del juego
             print("\nTablero enemigo:")
             maquina.mostrar_tablero_enemigo() #Es otro método dentro de la clase "Tablero" (estará en tablero.py)
 
-            x, y = pedir_coordenadas_usuario() #Es un método que pide las coordenadas al usuario (estará en funciones.py)
+            x, y = pedir_coordenadas_usuario(jugador.filas, jugador.cols) #Es un método que pide las coordenadas al usuario (estará en funciones.py)
 
             resultado = recibir_disparos (maquina,x,y) #Envía las coordenadas al tablero de la máquina y comprueba si el disparo es"Agua","Tocado" o "Hundido"
             print ("Resultado:", resultado) #Muestra el resultado de qué pasó con el disparo

@@ -14,15 +14,15 @@ def tablero_bonito(tablero): # No entiendo esta función
         print(f"{i+1:2}│" + " ".join(tablero[i]) + "│")
     print("  " + "─" * (cols_tablero * 2))
 
-def pedir_coordenadas_usuario(): # Le pide al jugador que ingrese coordenadas (x,y) del 1 al 10 y las convierte a índices 0-9
+def pedir_coordenadas_usuario(filas=10, cols=10):
     while True:
         entrada = input("Introduce coordenadas tipo x,y (1-10): ")
         try:
             x_str, y_str = entrada.split(",")
-            x = int(x_str) - 1
+            x = int(x_str) - 1  # Convertimos a índice 0-9
             y = int(y_str) - 1
-            if 0 <= x < filas_tablero and 0 <= y < cols_tablero:
-                return x, y # Ej: el usuario escribe "3,5": devuelve (2,4)
+            if 0 <= x < filas and 0 <= y < cols:  # Comprobamos que estén dentro del tablero
+                return x, y
             else:
                 print("Coordenadas fuera de rango. Intenta de nuevo.")
         except:
