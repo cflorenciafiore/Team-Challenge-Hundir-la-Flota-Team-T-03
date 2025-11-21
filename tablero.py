@@ -1,5 +1,6 @@
 import numpy as np
 from variables import *
+import random
 
 class Tablero: # La clase Tablero manejará toda la lógica de un tablero. Cada objeto Tablero representa el tablero de un jugador, sus barcos y disparos. Ej: jugador = Tablero(1) crea un tablero para el jugador 1.
     
