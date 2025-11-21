@@ -1,7 +1,7 @@
 #Importaciones necesarias
-from variables import flota, agua, barco, disparo_perdido, disparo_acertado, filas_tablero, cols_tablero
-from tablero import Tablero 
-from funciones import * 
+from variables import *
+from tablero import Tablero
+from funciones import *
 
 def juego (): #Mensaje de bienvenida e instrucciones del juego
     
@@ -64,4 +64,3 @@ def juego (): #Mensaje de bienvenida e instrucciones del juego
 
 if __name__ == "__main__":
     juego() #Ejecutamos la función juego() al ser el archivo del programa principal
-
