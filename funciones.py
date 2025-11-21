@@ -2,7 +2,7 @@ import numpy as np
 from variables import *
 from tablero import Tablero
 
-def crear_tablero(filas_tablero=10, cols_tablero=10, agua="~"): # Crea un tablero vacío de tamaño filas x columnas con agua
+def crear_tablero(filas_tablero=10, cols_tablero=10, agua="~"): #Crea un tablero vacío de tamaño filas x columnas con agua
     tablero = np.full((filas_tablero, cols_tablero,), agua) # El tablero es de 10x10 lleno de "~"
     return tablero
 
@@ -14,20 +14,17 @@ def tablero_bonito(tablero): # No entiendo esta función
         print(f"{i+1:2}│" + " ".join(tablero[i]) + "│")
     print("  " + "─" * (cols_tablero * 2))
 
-def pedir_coordenadas_usuario(tablero_enemigo):
-    filas_tablero, cols_tablero = tablero_enemigo.shape
+def pedir_coordenadas_usuario(): # Le pide al jugador que ingrese coordenadas (x,y) del 1 al 10 y las convierte a índices 0-9
     while True:
-        entrada = input(f"Introduce coordenadas tipo x,y (1-{filas_tablero},1-{cols_tablero}): ")
+        entrada = input("Introduce coordenadas tipo x,y (1-10): ")
         try:
             x_str, y_str = entrada.split(",")
             x = int(x_str) - 1
             y = int(y_str) - 1
-            if not (0 <= x < filas_tablero and 0 <= y < cols_tablero):
-                print("Coordenadas fuera de rango. Intenta de nuevo.")
-            elif tablero_enemigo[x, y] in ["X", "A"]:  # X=Tocado, A=Agua
-                print("Ya has disparado ahí. Elige otra coordenada.")
+            if 0 <= x < filas_tablero and 0 <= y < cols_tablero:
+                return x, y # Ej: el usuario escribe "3,5": devuelve (2,4)
             else:
-                return x, y
+                print("Coordenadas fuera de rango. Intenta de nuevo.")
         except:
             print("Formato incorrecto. Usa x,y del 1 al 10.")
 
@@ -35,12 +32,3 @@ def pedir_coordenadas_maquina(): # Genera coordenadas aleatorias para que la má
     x = np.random.randint(0,10)
     y = np.random.randint(0,10)
     return x, y # Ej: devuelve (7,3)
-
-def recibir_disparos(tablero_objeto, x, y):
-    return tablero_objeto.recibir_disparo(x, y)
-
-def procesar_disparo(tablero_objeto, x, y):
-    return tablero_objeto.procesar_disparo(x, y)
-
-def juego_terminado(tablero_objeto):
-    return tablero_objeto.juego_terminado()
